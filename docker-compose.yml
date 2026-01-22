@@ -1,0 +1,16 @@
+services:
+  jenkins:
+    image: jenkins/jenkins:latest-jdk25
+    container_name: jenkins-h2
+    user: root # Para evitar problemas de permisos con el socket
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - dad546dfb6d1a532d9d8a0c6ee6ded8e330b865c2bc5e025aaacd22110d4f570:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker
+volumes:
+  # Esto le dice a Compose que el volumen ya existe en el sistema
+  dad546dfb6d1a532d9d8a0c6ee6ded8e330b865c2bc5e025aaacd22110d4f570:
+    external: true
