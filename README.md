@@ -14,3 +14,5 @@ Entregables:
 - Captura del pipeline con stages exitosos.
 - URL de servicio (if accessible) or output of 'docker ps' showing container running.
 - Jenkinsfile used.
+
+-
